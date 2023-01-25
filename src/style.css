@@ -1,0 +1,33 @@
+body {
+    background-color: #d9e3f1;
+    font-family: 'Esteban', serif;
+}
+
+.spinner-grow {
+    color: #697cb8;
+}
+
+.card {
+    margin-top: 40px;
+}
+
+h1 {
+    font-size: calc(1.1rem + 1.5vw);
+    line-height: inherit;
+    margin-top: -10%;
+    color: #697cb8;
+}
+
+@media screen and (max-width: 450px) {
+    h1 {
+        margin-top: -20%;
+    }
+}
+
+.tip {
+    overflow-y: hidden;
+    position: relative;
+    margin-top: 50px;
+    display: none;
+    background: transparent;
+}
