@@ -1,5 +1,5 @@
 export default function getWeather(latitude, longitude, callback) {
-  fetch(`http://127.0.0.1:5000/weatherapi?lat=${latitude}&lon=${longitude}`)
+  fetch(`/weatherapi?lat=${latitude}&lon=${longitude}`)
     .then((response) => {
       return response.json();
     })

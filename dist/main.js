@@ -116,7 +116,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ getHaiku)\n/* harmony export */ });\nfunction getHaiku(situation, callback) {\n  const prompt = `Write a haiku about a ${situation.weather} ${situation.hour} in ${situation.season}`;\n\n  fetch(`http://127.0.0.1:5000/openaiapi/text?prompt=${prompt}`)\n    .then((response) => {\n      return response.json();\n    })\n    .then((response) => {\n      let haiku = response.choices[0][\"text\"];\n      callback(haiku);\n    })\n    .catch((error) => console.log(error.message));\n}\n\n\n//# sourceURL=webpack://aikutoday/./src/haiku.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ getHaiku)\n/* harmony export */ });\nfunction getHaiku(situation, callback) {\n  const prompt = `Write a haiku about a ${situation.weather} ${situation.hour} in ${situation.season}`;\n\n  fetch(`/openaiapi/text?prompt=${prompt}`)\n    .then((response) => {\n      return response.json();\n    })\n    .then((response) => {\n      let haiku = response.choices[0][\"text\"];\n      callback(haiku);\n    })\n    .catch((error) => console.log(error.message));\n}\n\n\n//# sourceURL=webpack://aikutoday/./src/haiku.js?");
 
 /***/ }),
 
@@ -136,7 +136,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ getImage)\n/* harmony export */ });\nfunction getImage(haiku, callback) {\n  // format haiku\n  haiku = haiku.slice(1, 1) + haiku.slice(2).replace(/\\n/g, \" \");\n\n  const prompt = `${haiku}, in the style of Japanese paintings`;\n\n  fetch(`http://127.0.0.1:5000/openaiapi/image?prompt=${prompt}`)\n    .then((response) => {\n      return response.json();\n    })\n    .then((response) => {\n      let image = response.data[0][\"url\"];\n      callback(image);\n    })\n    .catch((error) => console.log(error.message));\n}\n\n\n//# sourceURL=webpack://aikutoday/./src/image.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ getImage)\n/* harmony export */ });\nfunction getImage(haiku, callback) {\n  // format haiku\n  haiku = haiku.slice(1, 1) + haiku.slice(2).replace(/\\n/g, \" \");\n\n  const prompt = `${haiku}, in the style of Japanese paintings`;\n\n  fetch(`/openaiapi/image?prompt=${prompt}`)\n    .then((response) => {\n      return response.json();\n    })\n    .then((response) => {\n      let image = response.data[0][\"url\"];\n      callback(image);\n    })\n    .catch((error) => console.log(error.message));\n}\n\n\n//# sourceURL=webpack://aikutoday/./src/image.js?");
 
 /***/ }),
 
@@ -186,7 +186,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ getWeather)\n/* harmony export */ });\nfunction getWeather(latitude, longitude, callback) {\n  fetch(`http://127.0.0.1:5000/weatherapi?lat=${latitude}&lon=${longitude}`)\n    .then((response) => {\n      return response.json();\n    })\n    .then((data) => {\n      callback(data.weather[0].main);\n    })\n    .catch((error) => {\n      console.log(error.message);\n    });\n}\n\n\n//# sourceURL=webpack://aikutoday/./src/weather.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ getWeather)\n/* harmony export */ });\nfunction getWeather(latitude, longitude, callback) {\n  fetch(`/weatherapi?lat=${latitude}&lon=${longitude}`)\n    .then((response) => {\n      return response.json();\n    })\n    .then((data) => {\n      callback(data.weather[0].main);\n    })\n    .catch((error) => {\n      console.log(error.message);\n    });\n}\n\n\n//# sourceURL=webpack://aikutoday/./src/weather.js?");
 
 /***/ })
 

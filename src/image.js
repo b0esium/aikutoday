@@ -4,7 +4,7 @@ export default function getImage(haiku, callback) {
 
   const prompt = `${haiku}, in the style of Japanese paintings`;
 
-  fetch(`http://127.0.0.1:5000/openaiapi/image?prompt=${prompt}`)
+  fetch(`/openaiapi/image?prompt=${prompt}`)
     .then((response) => {
       return response.json();
     })
