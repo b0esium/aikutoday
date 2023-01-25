@@ -19,9 +19,6 @@ export default class UI {
       const imageSpinner = document.querySelector(".spinner-grow");
       imageSpinner.classList.add("d-none");
       imageDiv.appendChild(image);
-      // show tip widget
-      const tip = document.getElementById("tip");
-      tip.style.display = "flex";
     }
   }
 }

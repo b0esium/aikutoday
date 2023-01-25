@@ -24,10 +24,6 @@ h1 {
     }
 }
 
-.tip {
-    overflow-y: hidden;
-    position: relative;
-    margin-top: 50px;
-    display: none;
-    background: transparent;
+a:link, a:hover {
+    color: #697cb8;
 }
