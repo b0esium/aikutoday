@@ -24,6 +24,7 @@ h1 {
     }
 }
 
-a:link, a:hover {
-    color: #697cb8;
+.twitter {
+    color: #485d9f !important
+    font-family: Verdana, Geneva, Tahoma, sans-serif !important;
 }
